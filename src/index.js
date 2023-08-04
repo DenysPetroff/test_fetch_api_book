@@ -1,6 +1,7 @@
 import { getOneCategoriesBooksFromApi } from './fetch_API_categories.js';
 // let category = 'Hardcover Nonfiction';
 const categoryBookContainerGellary = document.querySelector('.top-category-list');
+const booksSection = document.querySelector('.container');
 
 let categories = 'Childrens Middle Grade Hardcover';
 getOneCategoriesBooksFromApi(categories).then(resp => {
@@ -9,7 +10,8 @@ getOneCategoriesBooksFromApi(categories).then(resp => {
 }).catch(error => console.log(error))
 
 
- function createGalleryCategoriesBooksMarkup(data) { 
+function createGalleryCategoriesBooksMarkup(data) { 
+  const categoryHeader = `<h2 class="books-section-title">${categories}</h2>`;
      
    const cartBook = data.map(({_id, book_image, title, author }) => 
 //    `<div class="photo-card">
@@ -26,6 +28,7 @@ getOneCategoriesBooksFromApi(categories).then(resp => {
        </div>`
    ).join('');
     categoryBookContainerGellary.innerHTML = '';
-    categoryBookContainerGellary.insertAdjacentHTML('beforeend', cartBook);
+   categoryBookContainerGellary.insertAdjacentHTML('beforeend', cartBook);
+   booksSection.insertAdjacentHTML('afterbegin', categoryHeader)
 };
 
