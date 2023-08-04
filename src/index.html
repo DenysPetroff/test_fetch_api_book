@@ -4,11 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page title</title>
-    <link rel="stylesheet" href="./sass/index.scss" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
+    />
+
+    <link rel="stylesheet" href="./css/top-books.css" />
+    >
     <script type="module" src="./index.js"></script>
   </head>
   <body>
-    <div class="gallery-category-books-container-js"></div>
+    <section class="books-section">
+      <div class="container">
+        <h1 class="books-section-title">Best Sellers Books</h1>
+        <div class="top-category-list"></div>
+      </div>
+    </section>
     <include src="./partials/example.html"></include>
   </body>
 </html>
