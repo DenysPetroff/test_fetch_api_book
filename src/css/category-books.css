@@ -1,0 +1,11 @@
+.books-container-category {
+    flex-wrap: wrap;
+}
+
+.last-word {
+    color: red;
+}
+
+/* .category-books-title::last-word {
+    color: blue;
+}  */
